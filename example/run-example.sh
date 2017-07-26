@@ -57,11 +57,14 @@ go build -ldflags="-X main.version=unknown" -o hello-updater src/hello-updater/m
 echo "Copying unknown version to deployment so it can self-update"; echo
 cp hello-updater deployment/
 
+echo ============== pocetak ==========================
 echo "Running deployment/hello-updater"
 deployment/hello-updater
+echo -- sleep 5
 sleep 5
 echo; echo "Re-running deployment/hello-updater"
 deployment/hello-updater
+echo -- sleep 5
 sleep 5
 echo; echo
 
